@@ -1,0 +1,20 @@
+@model UrunKatalog.Models.Product
+@{
+    ViewData["Title"] = Model.Name + " Detay";
+}
+
+<h1>@Model.Name</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Açıklama</dt>
+        <dd class="col-sm-10">@Model.Description</dd>
+
+        <dt class="col-sm-2">Fiyat</dt>
+        <dd class="col-sm-10">@Model.Price.ToString("C")</dd>
+    </dl>
+</div>
+<div>
+    <a href="/Products" class="btn btn-secondary">Listeye Geri Dön</a>
+</div>

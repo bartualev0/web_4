@@ -1,0 +1,28 @@
+@model List<UrunKatalog.Models.Product>
+@{
+    ViewData["Title"] = "Ürünler";
+}
+
+<h1>Ürün Listesi</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ürün Adı</th>
+            <th>Fiyat</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price.ToString("C")</td>
+                <td>
+                    <a href="/urun/@product.Id" class="btn btn-primary">Detay</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
